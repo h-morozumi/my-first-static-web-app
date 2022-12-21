@@ -25,7 +25,7 @@ env:
 jobs:
   test:
     # Runs on an ubuntu runner
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     strategy:
       matrix:
@@ -38,7 +38,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright
-      run: npm i playwright@next
+      run: npx playwright install --with-deps
     - name: Install Sirv
       run: npm install --g sirv-cli
     - name: Run playwright tests
